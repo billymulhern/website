@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Lato|Muli|Ubuntu|Poppins|Michroma" rel="stylesheet">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <div class="brand">
+            <h1>Billy's Page</h1>
+            <h3>Home</h3>
+        </div>
+        <div class="logo">
+            <img src="336x448_RocketBoy.png" alt="">
+        </div>
+    </header>
+
+    <div class="navigation">
+        <ul>
+            <li class="active">Home</li>
+            <li>
+                <a href="about.html">About</a>
+            </li>
+            <li>
+                <a href="contact.html">Contact</a>
+            </li>
+            <li>
+                <a href="profile.html">Profile</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="content">
+
+        <div class="calculator">
+            <table border="0">
+                <tr>
+                    <td colspan="5">
+                        <input id="display" type="text">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input id="MC" type="button" value="MC">
+                    </td>
+                    <td>
+                        <input id="MR" type="button" value="MR">
+                    </td>
+                    <td>
+                        <input id="MM" type="button" value="M-">
+                    </td>
+                    <td>
+                        <input id="MP" type="button" value="M+">
+                    </td>
+                    <td>
+                        <input id="divide" type="button" value="/">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input id="percent" type="button" value="&#37;">
+                    </td>
+                    <td>
+                        <input id="7" class="number" type="button" value="7">
+                    </td>
+                    <td>
+                        <input id="8" class="number" type="button" value="8">
+                    </td>
+                    <td>
+                        <input id="9" class="number" type="button" value="9">
+                    </td>
+                    <td>
+                        <input id="multiply" type="button" value="*">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input id="+/_" type="button" value="+/_">
+                    </td>
+                    <td>
+                        <input id="4" class="number" type="button" value="4">
+                    </td>
+                    <td>
+                        <input id="5" class="number" type="button" value="5">
+                    </td>
+                    <td>
+                        <input id="6" class="number" type="button" value="6">
+                    </td>
+                    <td>
+                        <input id="subtract" type="button" value="-">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input id="C" type="button" value="C">
+                    </td>
+                    <td>
+                        <input id="1" class="number" type="button" value="1">
+                    </td>
+                    <td>
+                        <input id="2" class="number" type="button" value="2">
+                    </td>
+                    <td>
+                        <input id="3" class="number" type="button" value="3">
+                    </td>
+                    <td rowspan="2">
+                        <input id="add" type="button" value="+">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input id="AC" type="button" value="AC">
+                    </td>
+                    <td>
+                        <input id="0" class="number" type="button" value="0">
+                    </td>
+                    <td>
+                        <input id="." type="button" value=".">
+                    </td>
+                    <td>
+                        <input id="=" type="button" value="=">
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+    <!-- Javascript -->
+    <script>
+        var currentInput = 0;
+        var reset = false;
+
+        function init() {
+            document.getElementById('multiply').addEventListener('click', multiply);
+            document.getElementById('add').addEventListener('click', add);
+            document.getElementById('divide').addEventListener('click', divide);
+            document.getElementById('subtract').addEventListener('click', subtract);
+            document.getElementById('AC').addEventListener('click', AC);
+            document.getElementById('MC').addEventListener('click', MC);
+            document.getElementById('MP').addEventListener('click', MP);
+            document.getElementById('subtract').addEventListener('click', subtract);
+            var numElements = document.getElementsByClassName('number');
+            for (var i = 0; i < numElements.length; i++) {
+                numElements[i].addEventListener('click', num);
+            }
+
+            //..
+            switch (operation) {
+                case '+':
+                    add = numb1 + numb2;
+                    System.out.println(add);
+                    break;
+
+            }
+            function AC() {
+                var display = document.getElementById('display');
+                display.value = '0';
+            }
+            function MP() {
+                var display = document.getElementById('display')
+                display.value = '0';
+            }
+            function add() {
+                var display = document.getElementById('display');
+                // remember what is currently entered
+                currentInput = display.value;
+
+                // reset on next input
+                reset = true;
+
+                // add it to the next value entered
+            }
+            function subtract() {
+
+            }
+            function divide() {
+
+            }
+            function multiply() {
+                var display = document.getElementById('display');
+                display.value = 30 * 47;
+            }
+            function num(event) {
+                var display = document.getElementById('display')
+                var val = event.target.value;
+                if (reset) {
+                    display.value = val;
+                } else {
+                    display.value += val;
+                }
+            }
+
+            init();
+        }
+    </script>
+</body>
+
+</html>
