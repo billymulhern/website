@@ -137,6 +137,7 @@
         var reset = false;
 
         function init() {
+            window.console.log('index');
             document.getElementById('multiply').addEventListener('click', multiply);
             document.getElementById('add').addEventListener('click', add);
             document.getElementById('divide').addEventListener('click', divide);
@@ -149,8 +150,6 @@
             for (var i = 0; i < numElements.length; i++) {
                 numElements[i].addEventListener('click', num);
             }
-
-            //..
 
             function AC() {
                 var display = document.getElementById('display');
