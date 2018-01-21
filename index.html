@@ -137,6 +137,7 @@
         var reset = false;
 
         function init() {
+            window.console.log('index');
             document.getElementById('multiply').addEventListener('click', multiply);
             document.getElementById('add').addEventListener('click', add);
             document.getElementById('divide').addEventListener('click', divide);
@@ -150,14 +151,6 @@
                 numElements[i].addEventListener('click', num);
             }
 
-            //..
-            switch (operation) {
-                case '+':
-                    add = numb1 + numb2;
-                    System.out.println(add);
-                    break;
-
-            }
             function AC() {
                 var display = document.getElementById('display');
                 display.value = '0';
@@ -195,9 +188,9 @@
                     display.value += val;
                 }
             }
-
-            init();
         }
+
+        init();
     </script>
 </body>
 
